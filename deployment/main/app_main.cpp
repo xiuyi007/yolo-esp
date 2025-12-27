@@ -2,6 +2,7 @@
 #include "esp_log.h"
 #include "bsp/esp-bsp.h"
 #include "esp_timer.h"
+#include "dl_image_jpeg.hpp"
 
 extern const uint8_t pest_jpg_start[] asm("_binary_pest_jpg_start");
 extern const uint8_t pest_jpg_end[] asm("_binary_pest_jpg_end");
