@@ -48,7 +48,7 @@ menu "models: pest_detect"
         default 1 if COCO_DETECT_YOLO11N_S8_V2
         default 2 if COCO_DETECT_YOLO11N_S8_V3
         default 3 if COCO_DETECT_YOLO11N_320_S8_V3
-        default 4 if COCO_DETECT_YOLO11N_S8_V1
+        default 4 if COCO_DETECT_YOLO11S_S8_V1
 
     choice
         prompt "model location"

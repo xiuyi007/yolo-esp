@@ -23,12 +23,26 @@ dependencies:
       registry_url: https://components.espressif.com
       type: service
     version: 0.5.3
+  espressif/dl_fft:
+    component_hash: 7dadbd644c0d7ba4733cc3726ec4cff6edf27b043725e1115861dec1609a3d28
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.3.1
   espressif/esp-dl:
     dependencies:
     - name: idf
       version: '>=5.3'
     - name: espressif/esp_new_jpeg
       version: ^0.6.1
+    - name: espressif/dl_fft
+      version: '>=0.3.1'
+    - name: espressif/esp-dsp
+      version: ==1.7.0
     source:
       path: /Users/togethf/Documents/code/yolo-esp/esp-dl/esp-dl
       type: local
@@ -36,7 +50,17 @@ dependencies:
     - esp32
     - esp32s3
     - esp32p4
-    version: 3.1.5
+    version: 3.2.1
+  espressif/esp-dsp:
+    component_hash: 42dce32d46ac93dc11f60d368e29a830e9661c7345d794b8a45c343479cae636
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.2'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.7.0
   espressif/esp32-camera:
     component_hash: f0a608b109935a5389221eee5090ec61f51b0df1a0749531fe59d33aaf263233
     dependencies:

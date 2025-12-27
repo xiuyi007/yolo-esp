@@ -1,2 +1,4 @@
 calibration_data
 model
+deployment/build
+deployment/managed_components
