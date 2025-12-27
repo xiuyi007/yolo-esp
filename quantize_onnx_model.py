@@ -41,16 +41,16 @@ class CaliDataset(Dataset):
 def quant_yolo11n(imgsz):
     BATCH_SIZE = 32
     INPUT_SHAPE = [3, imgsz, imgsz]
-    DEVICE = "cpu"
-    TARGET = "esp32p4"
+    DEVICE = "cuda:0"
+    TARGET = "esp32s3"
     NUM_OF_BITS = 8
     script_dir = os.path.dirname(os.path.abspath(__file__))
     ONNX_PATH = os.path.join(
-        script_dir, "pest.onnx"
+        script_dir, "model/pest-s.onnx"
     )
     ESPDL_MODLE_PATH = os.path.join(
         script_dir,
-        "pest_detect_yolo11n_s8_v1.espdl",
+        "pest_detect_yolo11s_s8_v1.espdl",
     )
 
     CALIB_DIR = "calibration_data"

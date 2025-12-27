@@ -7,6 +7,10 @@ menu "models: pest_detect"
         bool "flash pest_detect_yolo11n_s8_v2"
         depends on !COCO_DETECT_MODEL_IN_SDCARD
         default n
+    config FLASH_COCO_DETECT_YOLO11S_S8_V1
+        bool "flash pest_detect_yolo11s_s8_v1"
+        depends on !COCO_DETECT_MODEL_IN_SDCARD
+        default n
     config FLASH_COCO_DETECT_YOLO11N_S8_V3
         bool "flash pest_detect_yolo11n_s8_v3"
         depends on !COCO_DETECT_MODEL_IN_SDCARD
@@ -23,6 +27,9 @@ menu "models: pest_detect"
             default coco_detect model
         config COCO_DETECT_YOLO11N_S8_V1
             bool "pest_detect_yolo11n_s8_v1"
+            depends on COCO_DETECT_MODEL_IN_SDCARD || FLASH_COCO_DETECT_YOLO11N_S8_V1
+        config COCO_DETECT_YOLO11S_S8_V1
+            bool "pest_detect_yolo11s_s8_v1"
             depends on COCO_DETECT_MODEL_IN_SDCARD || FLASH_COCO_DETECT_YOLO11N_S8_V1
         config COCO_DETECT_YOLO11N_S8_V2
             bool "pest_detect_yolo11n_s8_v2"
@@ -41,6 +48,7 @@ menu "models: pest_detect"
         default 1 if COCO_DETECT_YOLO11N_S8_V2
         default 2 if COCO_DETECT_YOLO11N_S8_V3
         default 3 if COCO_DETECT_YOLO11N_320_S8_V3
+        default 4 if COCO_DETECT_YOLO11N_S8_V1
 
     choice
         prompt "model location"
