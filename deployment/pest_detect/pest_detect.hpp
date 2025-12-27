@@ -19,6 +19,7 @@ public:
         YOLO11N_S8_V3,
         YOLO11N_320_S8_V3,
         YOLO11S_S8_V1,
+        YOLO11N_S16_V1,
     } model_type_t;
     PestDetect(model_type_t model_type = static_cast<model_type_t>(CONFIG_DEFAULT_PEST_DETECT_MODEL),
                bool lazy_load = true);

@@ -41,6 +41,9 @@ if (NOT CONFIG_PEST_DETECT_MODEL_IN_SDCARD)
     if(CONFIG_PEST_DETECT_YOLO11S_S8_V1)
         list(APPEND models ${models_dir}/pest_detect_yolo11s_s8_v1.espdl)
     endif()
+    if(CONFIG_PEST_DETECT_YOLO11N_S16_V1)
+        list(APPEND models ${models_dir}/pest_detect_yolo11n_s16_v1.espdl)
+    endif()
 
     set(pack_model_exe ${espdl_dir}/fbs_loader/pack_espdl_models.py)
     add_custom_command(

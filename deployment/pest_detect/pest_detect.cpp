@@ -53,6 +53,7 @@ PestDetect::PestDetect(model_type_t model_type, bool lazy_load) : m_model_type(m
     case model_type_t::YOLO11N_S8_V3:
     case model_type_t::YOLO11S_S8_V1:
     case model_type_t::YOLO11N_320_S8_V3:
+    case model_type_t::YOLO11N_S16_V1:
         m_score_thr[0] = pest_detect::Yolo11n::default_score_thr;
         m_nms_thr[0] = pest_detect::Yolo11n::default_nms_thr;
         break;
@@ -100,6 +101,13 @@ void PestDetect::load_model()
         m_model = new pest_detect::Yolo11n("pest_detect_yolo11s_s8_v1.espdl", m_score_thr[0], m_nms_thr[0]);
 #else
         ESP_LOGE("pest_detect", "pest_detect_yolo11s_s8_v1 is not selected in menuconfig.");
+#endif
+        break;
+    case model_type_t::YOLO11N_S16_V1:
+#if CONFIG_FLASH_PEST_DETECT_YOLO11N_S16_V1 || CONFIG_PEST_DETECT_MODEL_IN_SDCARD
+        m_model = new pest_detect::Yolo11n("pest_detect_yolo11n_s16_v1.espdl", m_score_thr[0], m_nms_thr[0]);
+#else
+        ESP_LOGE("pest_detect", "pest_detect_yolo11n_s16_v1 is not selected in menuconfig.");
 #endif
         break;
     }
