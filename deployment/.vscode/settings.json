@@ -12,5 +12,5 @@
     "--compile-commands-dir=/Users/togethf/Documents/code/yolo-esp/deployment/build"
   ],
   "idf.flashType": "UART",
-  "idf.port": "/dev/tty.usbmodem13101"
+  "idf.port": "/dev/tty.usbmodem1101"
 }
